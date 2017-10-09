@@ -30,5 +30,14 @@ Entry.prototype.consonants = function() {
   return consonantsCount;
 };
 
+Entry.prototype.getTeaser = function() {
+  var sentences = this.entryText.split(".");
+  var firstSentence = sentences[0].split(" ");
+  if (firstSentence.length <= 8) {
+    return firstSentence.join(" ");
+  } else {
+    return firstSentence.slice(0, 8).join(" ");
+  }
+};
 
 exports.entryModule = Entry;

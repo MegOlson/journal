@@ -20,6 +20,18 @@ Entry.prototype.vowels = function() {
   return vowelCount;
 };
 
+Entry.prototype.consonants = function() {
+  var letters = this.entryText.split("");
+  var consonantsCount = 0;
+  letters.forEach(function(letter){
+    if (/[b-df-hj-np-tv-z]/i.test(letter)) {
+      consonantsCount ++;
+    }
+  });
+  return consonantsCount;
+};
+
+
 exports.entryModule = Entry;
 
 },{}],2:[function(require,module,exports){
@@ -31,7 +43,7 @@ $(document).ready(function() {
     var title = $("#title").val();
     var entry = $("#entry").val();
     var newEntry = new Entry(title, entry);
-    $("ul.entries").append("<li>" + newEntry.title + " " + newEntry.wordCount()  + " " + newEntry.vowels() + "</li>");
+    $("ul.entries").append("<li>" + newEntry.title + " " + newEntry.wordCount()  + " " + newEntry.vowels() + " " + newEntry.consonants() + "</li>");
   });
 });
 

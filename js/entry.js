@@ -19,4 +19,16 @@ Entry.prototype.vowels = function() {
   return vowelCount;
 };
 
+Entry.prototype.consonants = function() {
+  var letters = this.entryText.split("");
+  var consonantsCount = 0;
+  letters.forEach(function(letter){
+    if (/[b-df-hj-np-tv-z]/i.test(letter)) {
+      consonantsCount ++;
+    }
+  });
+  return consonantsCount;
+};
+
+
 exports.entryModule = Entry;

@@ -6,6 +6,6 @@ $(document).ready(function() {
     var title = $("#title").val();
     var entry = $("#entry").val();
     var newEntry = new Entry(title, entry);
-    $("ul.entries").append("<li>" + newEntry.title + " " + newEntry.wordCount()  + " " + newEntry.vowels() + "</li>");
+    $("ul.entries").append("<li>" + newEntry.title + " " + newEntry.wordCount()  + " " + newEntry.vowels() + " " + newEntry.consonants() + "</li>");
   });
 });
